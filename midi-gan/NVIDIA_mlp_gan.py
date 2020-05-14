@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 import glob
 from music21 import converter, instrument, note, chord, stream
-from tensorflow.python.keras.layers import Input, Dense, Reshape, Dropout, CUDNNLSTM, Bidirectional
+from tensorflow.python.keras.layers import Input, Dense, Reshape, Dropout, CuDNNLSTM, Bidirectional
 from tensorflow.python.keras.layers import BatchNormalization, Activation, ZeroPadding2D
 from tensorflow.python.keras.layers.advanced_activations import LeakyReLU
 from tensorflow.python.keras.models import Sequential, Model

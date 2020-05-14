@@ -168,8 +168,8 @@ class GAN():
     def build_discriminator(self):
 
         model = Sequential()
-        model.add(LSTM(512, input_shape=self.seq_shape, return_sequences=True))
-        model.add(Bidirectional(LSTM(512)))
+        model.add(LSTM(512, input_shape=self.seq_shape, activation = "tanh", return_sequences=True))
+        model.add(Bidirectional(LSTM(512, activation = "tanh")))
         model.add(Dense(512))
         model.add(LeakyReLU(alpha=0.2))
         model.add(Dense(256))
@@ -277,4 +277,4 @@ class GAN():
 
 if __name__ == '__main__':
   gan = GAN(rows=100)    
-  gan.train(epochs=50, batch_size=32, sample_interval=1)
+  gan.train(epochs=100, batch_size=32, sample_interval=1)
